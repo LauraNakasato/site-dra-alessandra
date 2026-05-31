@@ -47,17 +47,17 @@ export default function Home() {
     <main className="min-h-screen bg-brand-peach overflow-hidden">
       <Header />
 
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-16 md:pt-44 md:pb-24 lg:pt-52 lg:pb-32">
+      {/* HERO SECTION - Aumento do espaçamento superior no mobile (pt-48) */}
+      <section className="relative pt-48 pb-16 md:pt-48 md:pb-24 lg:pt-52 lg:pb-32">
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-brand-rose/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-brand-mauve/20 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
-            {/* COLUNA ESQUERDA */}
+            {/* COLUNA ESQUERDA - Adicionado mt-8 para empurrar o texto um pouco mais para baixo no mobile */}
             <motion.div
-              className="flex-1 flex flex-col items-center text-center z-10 w-full"
+              className="flex-1 flex flex-col items-center text-center z-10 w-full mt-8 md:mt-0"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
