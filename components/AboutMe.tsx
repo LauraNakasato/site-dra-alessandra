@@ -12,37 +12,52 @@ export default function AboutMe() {
             `}</style>
 
             <div className="max-w-7xl mx-auto px-6 sm:px-10">
-                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24">
 
-                    {/* COLUNA ESQUERDA: FOTO */}
-                    <div className="flex-1 relative order-2 lg:order-1 flex justify-center">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[600px] h-[400px] lg:h-[525px] rounded-3xl overflow-hidden shadow-2xl"
-                        >
+                    {/* COLUNA ESQUERDA: IMAGEM DESKTOP */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="hidden lg:flex flex-1 w-full relative justify-center"
+                    >
+                        {/* Container da Imagem para computador */}
+                        <div className="relative w-full max-w-[480px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[8px] border-white/40 bg-white/10">
                             <Image
                                 src="/foto-sobre.png"
-                                alt="Alessandra Begatti Victorino"
+                                alt="Dra. Alessandra Begatti Victorino"
                                 fill
-                                className="object-cover object-center"
+                                sizes="(min-width: 1024px) 50vw"
+                                className="object-cover hover:scale-105 transition-transform duration-700"
                             />
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
 
-                    {/* COLUNA DIREITA: TEXTO TRAJETÓRIA */}
+                    {/* COLUNA DIREITA: TEXTO E TRAJETÓRIA */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 order-1 lg:order-2"
+                        className="flex-1 lg:max-w-xl flex flex-col"
                     >
-                        <h2 className="font-serif text-3xl md:text-5xl text-brand-text mb-8 leading-tight">
+                        <h2 className="font-serif text-3xl md:text-5xl text-brand-text mb-6 lg:mb-6 leading-tight">
                             Sobre <span className="italic font-normal text-[#D95B6A]">Mim</span>
                         </h2>
+
+                        {/* IMAGEM MOBILE: Aparece apenas no celular, entre o título e o texto */}
+                        <div className="block lg:hidden w-full mb-10">
+                            <div className="relative w-full max-w-[420px] mx-auto aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[8px] border-white/40 bg-white/10">
+                                <Image
+                                    src="/foto-sobre.png"
+                                    alt="Dra. Alessandra Begatti Victorino"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
 
                         <div className="font-sans text-brand-text/70 text-lg leading-relaxed space-y-6 mb-10">
                             <p>
@@ -62,7 +77,7 @@ export default function AboutMe() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="mt-8"
+                            className="mt-2"
                         >
                             <p className="font-['Great_Vibes'] text-4xl md:text-5xl text-[#D95B6A] opacity-80">
                                 Alessandra Begatti Victorino
