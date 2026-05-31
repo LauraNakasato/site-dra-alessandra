@@ -62,14 +62,15 @@ export default function OnlineTherapy() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 w-full"
+                        className="flex-1 w-full mt-10 lg:mt-0 flex justify-center"
                     >
-                        {/* Container da Imagem com cantos arredondados suaves e sombra premium */}
-                        <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-white/20">
+                        {/* Container da Imagem com formato alongado no mobile, borda elegante e sombra suave */}
+                        <div className="relative w-full max-w-[420px] lg:max-w-none aspect-[4/5] lg:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[8px] border-white/40 bg-white/10">
                             <Image
                                 src="/foto-online.png"
                                 alt="Notebook e livro ilustrando o atendimento online"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
                                 className="object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </div>
