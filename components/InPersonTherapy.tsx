@@ -8,15 +8,15 @@ export default function InPersonTherapy() {
     return (
         <section id="presencial" className="py-24 bg-brand-mauve/10">
             <div className="max-w-7xl mx-auto px-6 sm:px-10">
-                <div className="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row-reverse lg:items-center gap-10 lg:gap-24">
 
-                    {/* COLUNA DIREITA: TEXTO E CAIXAS FLUTUANTES */}
+                    {/* COLUNA TEXTO E CAIXAS FLUTUANTES */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 lg:max-w-xl"
+                        className="flex-1 lg:max-w-xl flex flex-col"
                     >
                         <div className="flex items-center gap-2 mb-4">
                             <MapPin className="text-[#D95B6A]" size={20} />
@@ -25,9 +25,23 @@ export default function InPersonTherapy() {
                             </span>
                         </div>
 
-                        <h2 className="font-serif text-3xl md:text-5xl text-brand-text mb-6 leading-tight">
+                        <h2 className="font-serif text-3xl md:text-5xl text-brand-text mb-6 lg:mb-6 leading-tight">
                             Atendimento <span className="italic font-normal text-[#D95B6A]">Presencial</span>
                         </h2>
+
+                        {/* IMAGEM MOBILE: Aparece apenas no celular, entre o título e o texto */}
+                        <div className="block lg:hidden w-full mb-10">
+                            <div className="relative w-full max-w-[420px] mx-auto aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[8px] border-white/50 bg-white/10">
+                                <Image
+                                    src="/foto-consultorio.png"
+                                    alt="Janela do consultório presencial"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
+
                         <p className="font-sans text-brand-text/70 text-lg leading-relaxed mb-10">
                             Um espaço de acolhimento pensado em cada detalhe para oferecer conforto, segurança e a infraestrutura necessária para todas as idades.
                         </p>
@@ -74,20 +88,21 @@ export default function InPersonTherapy() {
                         </div>
                     </motion.div>
 
-                    {/* COLUNA ESQUERDA: IMAGEM */}
+                    {/* COLUNA IMAGEM DESKTOP */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 w-full relative"
+                        className="hidden lg:flex flex-1 w-full relative justify-center"
                     >
-                        <div className="relative w-full aspect-[4/5] max-w-[480px] mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-[8px] border-white/50">
+                        <div className="relative w-full aspect-[4/5] max-w-[480px] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[8px] border-white/50 bg-white/10">
                             <Image
                                 src="/foto-consultorio.png"
-                                alt="Janela do consultório"
+                                alt="Janela do consultório presencial"
                                 fill
-                                className="object-cover"
+                                sizes="(min-width: 1024px) 50vw"
+                                className="object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </div>
                     </motion.div>
