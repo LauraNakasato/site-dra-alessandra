@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Paleta de Cores da Marca */
+  --color-brand-peach: #FCEAE8;
+  /* <- MUDANÇA AQUI: Rosinha salmão pastel claro */
+  --color-brand-mauve: #D6C5D3;
+  --color-brand-green: #8FA88F;
+  --color-brand-rose: #E2C2B3;
+  --color-brand-text: #4A4442;
+
+  /* Fontes Elegantes */
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-script: var(--font-great-vibes);
+
+  /* tracking personalizados do tailwind */
+  --tracking-6.5: 0.65em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 1. GARANTIA ABSOLUTA DE COR DE FUNDO (Failsafe) */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FCEAE8;
+  /* <- MUDANÇA AQUI TAMBÉM */
+  color: #4A4442;
+  overflow-x: hidden;
+}
+
+/* 2. Rolagem suave da página */
+html {
+  scroll-behavior: smooth;
 }
