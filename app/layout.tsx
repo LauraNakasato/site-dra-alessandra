@@ -19,8 +19,22 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Alessandra Victorino | Psicóloga e Neuropsicóloga Humanizada",
-  description: "Seu espaço de acolhimento e transformação no Tatuapé (Edifício Empresarial Etoile). Atendimento Neuropsicológico e Psicoterapia (TCC) para todas as idades.",
+  title: "ABV Neuropsi | Dra. Alessandra Begatti - Psicóloga",
+  description: "Clínica ABV Neuropsi. Seu espaço de acolhimento e transformação no Tatuapé (Edifício Empresarial Etoile). Atendimento Neuropsicológico e Psicoterapia (TCC) para todas as idades.",
+  keywords: [
+    "Psicóloga",
+    "Neuropsicóloga",
+    "Avaliação Neuropsicológica",
+    "Terapia Cognitivo-Comportamental",
+    "TCC",
+    "Saúde Mental",
+    "ABV Neuropsi",
+    "Dra. Alessandra Begatti",
+    "Psicóloga no Tatuapé",
+    "Edifício Empresarial Etoile"
+  ],
+  authors: [{ name: "Dra. Alessandra Begatti" }],
+  robots: "index, follow",
 };
 
 export default function RootLayout({
