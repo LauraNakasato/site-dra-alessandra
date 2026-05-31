@@ -72,13 +72,15 @@ export default function Header() {
             `}</style>
 
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 min-h-[80px] flex items-center ${isScrolled
                     ? "bg-brand-peach/80 backdrop-blur-md shadow-sm py-3.5 border-b border-brand-mauve/10"
                     : "bg-transparent py-6"
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between relative">
-                    <div className="flex-1 flex justify-start z-10">
+                <div className="max-w-7xl w-full mx-auto px-6 sm:px-8 flex items-center justify-between relative">
+
+                    {/* BOTÃO DO MENU (ESQUERDA) */}
+                    <div className="flex-1 flex justify-start z-10 relative">
                         <button
                             onClick={() => setIsMenuOpen(true)}
                             aria-label="Abrir menu"
@@ -88,9 +90,10 @@ export default function Header() {
                         </button>
                     </div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center select-none z-0">
-                        <div className="relative flex flex-col items-center group cursor-pointer text-center">
-                            <div className="relative w-14 h-14 flex items-center justify-center translate-x-1.5">
+                    {/* LOGOTIPO (CENTRALIZADO DE FORMA ABSOLUTA) */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center select-none z-0 w-max pointer-events-none">
+                        <div className="relative flex flex-col items-center group text-center">
+                            <div className="relative w-14 h-14 flex items-center justify-center">
                                 <div className="absolute inset-0 overflow-visible pointer-events-none z-0">
                                     <Heart className="matryoshka-heart layer-3 w-8 h-8" strokeWidth={0} />
                                     <Heart className="matryoshka-heart layer-2 w-8 h-8" strokeWidth={0} />
@@ -101,11 +104,11 @@ export default function Header() {
                                     alt="Logo ABV Neuropsi"
                                     width={56}
                                     height={56}
-                                    className="relative z-10 drop-shadow-sm group-hover:scale-105 transition-transform duration-500"
+                                    className="relative z-10 drop-shadow-sm transition-transform duration-500"
                                     priority
                                 />
                             </div>
-                            <div className="text-center mt-1.5 tracking-widest text-brand-text translate-x-1.5">
+                            <div className="text-center mt-1.5 tracking-widest text-brand-text">
                                 <span className="font-serif font-bold text-sm sm:text-base uppercase block">
                                     ABV Neuropsi
                                 </span>
@@ -115,7 +118,9 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 hidden sm:block"></div>
+
+                    {/* ESPAÇO DIREITO (PARA MANTER A ESTRUTURA FLEX) */}
+                    <div className="flex-1 hidden sm:block relative"></div>
                 </div>
             </header>
 
