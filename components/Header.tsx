@@ -72,15 +72,16 @@ export default function Header() {
             `}</style>
 
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 min-h-[80px] flex items-center ${isScrolled
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
                     ? "bg-brand-peach/80 backdrop-blur-md shadow-sm py-3.5 border-b border-brand-mauve/10"
                     : "bg-transparent py-6"
                     }`}
             >
-                <div className="max-w-7xl w-full mx-auto px-6 sm:px-8 flex items-center justify-between relative">
+                {/* Mudamos para grid com 3 colunas (1fr auto 1fr) para forçar o centro exato */}
+                <div className="max-w-7xl w-full mx-auto px-6 sm:px-8 grid grid-cols-[1fr_auto_1fr] items-center">
 
                     {/* BOTÃO DO MENU (ESQUERDA) */}
-                    <div className="flex-1 flex justify-start z-10 relative">
+                    <div className="flex justify-start z-10">
                         <button
                             onClick={() => setIsMenuOpen(true)}
                             aria-label="Abrir menu"
@@ -90,8 +91,8 @@ export default function Header() {
                         </button>
                     </div>
 
-                    {/* LOGOTIPO (CENTRALIZADO DE FORMA ABSOLUTA) */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center select-none z-0 w-max pointer-events-none">
+                    {/* LOGOTIPO (CENTRALIZADO NO FLUXO DA PÁGINA) */}
+                    <div className="flex flex-col items-center justify-center select-none z-0">
                         <div className="relative flex flex-col items-center group text-center">
                             <div className="relative w-14 h-14 flex items-center justify-center">
                                 <div className="absolute inset-0 overflow-visible pointer-events-none z-0">
@@ -119,8 +120,8 @@ export default function Header() {
                         </div>
                     </div>
 
-                    {/* ESPAÇO DIREITO (PARA MANTER A ESTRUTURA FLEX) */}
-                    <div className="flex-1 hidden sm:block relative"></div>
+                    {/* ESPAÇO DIREITO (PARA MANTER A SIMETRIA DO GRID) */}
+                    <div className="flex justify-end"></div>
                 </div>
             </header>
 
