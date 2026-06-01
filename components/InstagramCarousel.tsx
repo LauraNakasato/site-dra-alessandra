@@ -27,12 +27,13 @@ const InstagramIcon = ({ size = 24, className = "", strokeWidth = 1.5 }) => (
     </svg>
 );
 
+// ALTERAÇÃO AQUI: Trocamos .jfif para .jpg
 const instagramPosts = [
-    { id: 1, image: "/insta-1.jfif", link: "https://www.instagram.com/p/DY4p5Eavspp/" },
-    { id: 2, image: "/insta-2.jfif", link: "https://www.instagram.com/p/DYATDsalTFS/" },
-    { id: 3, image: "/insta-3.jfif", link: "https://www.instagram.com/p/DYP9BmOPzVv/" },
-    { id: 4, image: "/insta-4.jfif", link: "https://www.instagram.com/p/DYMwLaMj5IJ/" },
-    { id: 5, image: "/insta-5.jfif", link: "https://www.instagram.com/reel/DYCxTImPwrE/" },
+    { id: 1, image: "/insta-1.jpg", link: "https://www.instagram.com/p/DY4p5Eavspp/" },
+    { id: 2, image: "/insta-2.jpg", link: "https://www.instagram.com/p/DYATDsalTFS/" },
+    { id: 3, image: "/insta-3.jpg", link: "https://www.instagram.com/p/DYP9BmOPzVv/" },
+    { id: 4, image: "/insta-4.jpg", link: "https://www.instagram.com/p/DYMwLaMj5IJ/" },
+    { id: 5, image: "/insta-5.jpg", link: "https://www.instagram.com/reel/DYCxTImPwrE/" },
 ];
 
 export default function InstagramCarousel() {
